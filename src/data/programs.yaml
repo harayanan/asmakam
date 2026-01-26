@@ -1,0 +1,54 @@
+title: "Learning and Experiences at ALU"
+intro: >
+  Asmakam Life University is currently taking shape in a 20 acres of natural food forest
+  in Indore, located in Central India with a natural residential space for experiencing
+  a natural life.
+
+programTypes:
+  - name: "Residential Programs"
+    description: "Short term and long term residential experiences focusing on sustainability, wellness and life learning."
+    icon: "home"
+
+  - name: "Online Programs"
+    description: "Digital learning experiences bringing our philosophy to learners worldwide."
+    icon: "globe"
+
+  - name: "Summer Programs"
+    description: "Immersive summer experiences for young learners and families."
+    icon: "sun"
+
+  - name: "Gap Year Programs"
+    description: "Extended programs for those seeking a purposeful pause to discover themselves."
+    icon: "compass"
+
+  - name: "Retreats"
+    description: "Focused retreats on sustainability, wellness and conscious living."
+    icon: "mountain"
+
+  - name: "Corporate Programs"
+    description: "Experiential learning programs curated for conventional universities, corporates and organisations."
+    icon: "briefcase"
+
+specialPrograms:
+  - name: "Vaanprasthee Community"
+    description: >
+      A community of vaanprasthees (50+ age) creating amazing skills building experiences
+      for the young generation from their vast professional and personal experiences.
+      Mid-age professionals from across the world who are looking forward to give back
+      to the community.
+
+  - name: "Digital Nomads"
+    description: >
+      Open doors for digital nomads to come and work from our space along with sharing
+      their skills and contributing to the community.
+
+  - name: "Specially-Abled Children"
+    description: >
+      Programs for specially abled children and their families to learn together for
+      short/long term customized learnings tailored to their needs.
+
+  - name: "Co-Creator Farm Experiences"
+    description: >
+      Our co-creators Bhoomi Naturals, Urveera and Jeevantika have their own natural
+      farms and will design residential experiential programs with us, so that learners
+      can have varied experiences.

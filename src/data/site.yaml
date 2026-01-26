@@ -1,0 +1,30 @@
+name: "Asmakam Life University"
+nameShort: "ALU"
+nameSanskrit: "Asmakam"
+nameMeaning: "OURS"
+tagline: "Nurturing a Generation of Conscious Creators"
+subtitle: "Discover your essence in harmony with Self, Society and the Universe"
+motto: "Sustainability | Wellness | Learning"
+description: >
+  Leveraging diverse forms of wealth - time, nature, wisdom, community and cultural heritage,
+  we are a learning space in nature where programs and retreats are offered to individuals and
+  families who are keen to experience various aspects of ecological living, wellness, growing
+  food and essential life skills.
+founded: 2014
+foundedBy: "IIT alumni"
+location: "Indore, India"
+website: "https://www.asmakam.org"
+youtube: "https://youtu.be/R4v-zOsk_nc"
+ecoHouseVideo: "https://youtu.be/YApVmYESyGc"
+cotfoo:
+  name: "Cotfoo"
+  fullName: "Connecting thru Food"
+  description: "Connecting natural farmers directly to families aiming for medicine free life"
+  website: "https://www.cotfoo.com"
+essence:
+  - title: "Finding balance between Spiritual, Emotional & Material Life"
+    icon: "balance"
+  - title: "Connection with Self, Others and Nature"
+    icon: "connection"
+  - title: "Taking Charge Of Our Own Food, Wellness & Learning"
+    icon: "charge"

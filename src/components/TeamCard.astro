@@ -1,0 +1,32 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  credential: string;
+  bio: string;
+  image?: string;
+}
+
+const { name, role, credential, bio, image } = Astro.props;
+
+const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2);
+---
+
+<div class="card p-6 border border-gray-100">
+  <div class="flex flex-col sm:flex-row gap-6">
+    <!-- Photo / Placeholder -->
+    <div class="shrink-0 self-center sm:self-start">
+      <div class="w-24 h-24 rounded-full bg-gradient-to-br from-forest to-lime flex items-center justify-center text-white font-heading text-2xl font-bold">
+        {initials}
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="flex-1 text-center sm:text-left">
+      <h3 class="font-heading text-xl font-semibold text-text-primary">{name}</h3>
+      <p class="font-body text-sm text-leaf font-medium mt-1">{role}</p>
+      <p class="font-body text-xs text-text-muted mt-1 italic">{credential}</p>
+      <p class="font-body text-sm text-text-muted leading-relaxed mt-3">{bio}</p>
+    </div>
+  </div>
+</div>

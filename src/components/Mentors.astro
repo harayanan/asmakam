@@ -1,0 +1,29 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+
+const mentorsData = yaml.load(readFileSync('src/data/mentors.yaml', 'utf8')) as Record<string, any>;
+---
+
+<section class="section-padding bg-sand">
+  <div class="container-wide mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="section-title">{mentorsData.title}</h2>
+      <p class="section-subtitle mx-auto mt-4">{mentorsData.intro}</p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      {mentorsData.names.map((name: string) => {
+        const initials = name.split(' ').map((n: string) => n[0]).join('').slice(0, 2);
+        return (
+          <div class="text-center p-4">
+            <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-plum/80 to-forest/80 flex items-center justify-center text-white font-heading text-lg font-bold">
+              {initials}
+            </div>
+            <p class="font-body text-sm font-medium text-text-primary">{name}</p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+title: "Team Asmakam"
+intro: >
+  Asmakam is initiated by a family of lifelong learners, USA citizens who moved back to
+  Bharat in 2014, living a sustainable and natural life and trying to practice zero
+  outsourcing for education, food and health.
+
+members:
+  - name: "Archana Parsai Gehlot"
+    role: "Co-Founder"
+    credential: "IIT Bombay, Ex. Product Strategy Director Oracle USA"
+    bio: >
+      Her creative and sustainable lifestyle has taken over her 20 years of corporate life
+      in top companies and her experiments with zero outsourcing of health, education and
+      food have manifested into the social impact initiatives of Asmakam Life University
+      and Cotfoo - Connecting thru Food (food as medicine).
+    image: "/images/team/archana.jpg"
+
+  - name: "Manish Gehlot"
+    role: "Co-Founder"
+    credential: "IIT Bombay, Head CRL Practice Infosys USA, Ex. Director Oracle/IBM USA"
+    bio: >
+      Currently heading supply chain consulting team for Infosys USA. Previously held
+      positions with Oracle USA, IBM, Accenture. He leads the life skills vertical at
+      Asmakam and is passionate about forest and water conservation. He loves working
+      with youth across the globe to motivate their inner potential.
+    image: "/images/team/manish.jpg"
+
+  - name: "Sakshi Bhatia"
+    role: "Co-Creator"
+    credential: "IIT Delhi - Comp Science, ML/AI expert, ex-American Express"
+    bio: >
+      Having worked in the global FinTech industry, she has discovered her true passion
+      in living harmoniously with nature. Together with Arpit, she has established a
+      thriving permaculture-based food forest near Indore and has dedicated herself to
+      educating others about sustainability, yoga, permaculture, and natural living.
+    image: "/images/team/sakshi.jpg"
+
+  - name: "Arpit Maheshwari"
+    role: "Co-Creator"
+    credential: "IIT Bombay - AIR-2 JEE-2006, ex-Goldman Sachs"
+    bio: >
+      After working with tech startups in India and the San Francisco Bay Area, he left
+      his high-flying career to seek a more purposeful life - he has established a
+      thriving permaculture-based food forest near Indore and has dedicated himself to
+      educating others about sustainability, permaculture, and natural living.
+    image: "/images/team/arpit.jpg"
+
+  - name: "Maitreyee Gehlot"
+    role: "Co-Founder"
+    credential: "Georgia Tech/ASU/UC USA, Samsung USA, Cotfoo"
+    bio: >
+      Professionally working as Project/Product Manager. As a self learner, her inner
+      and outer learning journeys led her to question many things about the fast-paced
+      and unsustainable lives we lead in today's capitalistic society. Being a young
+      entrepreneur and building two social impact startups has instilled in-depth
+      professional, technical, interpersonal, leadership and life skills.
+    image: "/images/team/maitreyee.jpg"
+
+  - name: "Harish Narayanan"
+    role: "Advisor"
+    credential: "IIM Lucknow, CMO HDFC AMC, Ex CMO Myntra, CGO Upstock"
+    bio: >
+      Award-winning CXO, and Growth & Marketing leader. He has been awarded CMO Super 30,
+      Digital CMO of the Year, ET Brand Equity Awards, CMO Asia Award, among many others.
+      He considers compassion and clarity to be his superpowers, which he brings to both
+      team leadership and business growth.
+    image: "/images/team/harish.jpg"

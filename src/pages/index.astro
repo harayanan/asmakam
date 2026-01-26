@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Pillars from '../components/Pillars.astro';
+import Vision from '../components/Vision.astro';
+import Campus from '../components/Campus.astro';
+import Programs from '../components/Programs.astro';
+import ContactSection from '../components/ContactSection.astro';
+import BlogCard from '../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout>
+  <Header />
+  <main>
+    <Hero />
+    <Pillars />
+    <Vision />
+    <Campus />
+    <Programs />
+
+    <!-- Latest from the Blog -->
+    {posts.length > 0 && (
+      <section class="section-padding bg-sand">
+        <div class="container-wide mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="section-title">Latest from Our Journey</h2>
+            <p class="section-subtitle mx-auto mt-4">
+              Stories, insights and updates from Asmakam Life University
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {posts.map((post) => (
+              <BlogCard
+                title={post.data.title}
+                description={post.data.description}
+                date={post.data.date}
+                slug={post.slug}
+                tags={post.data.tags}
+              />
+            ))}
+          </div>
+          <div class="text-center mt-10">
+            <a href="/blog" class="btn-secondary">View All Posts</a>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <ContactSection />
+  </main>
+  <Footer />
+</BaseLayout>

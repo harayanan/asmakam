@@ -1,0 +1,73 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+
+const siteData = yaml.load(readFileSync('src/data/site.yaml', 'utf8')) as Record<string, any>;
+const navData = yaml.load(readFileSync('src/data/navigation.yaml', 'utf8')) as {
+  links: { label: string; href: string }[];
+};
+---
+
+<footer class="bg-forest text-white">
+  <div class="container-wide mx-auto section-padding pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="/images/logo.png" alt="Asmakam" class="h-12 w-auto brightness-200" />
+          <div>
+            <span class="font-heading text-xl font-bold block">Asmakam</span>
+            <span class="font-body text-sm text-green-200 block">Life University</span>
+          </div>
+        </div>
+        <p class="font-body text-green-100 text-sm leading-relaxed mb-4">
+          {siteData.tagline}
+        </p>
+        <p class="font-body text-green-200 text-xs">
+          {siteData.motto}
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-heading text-lg font-semibold mb-4">Quick Links</h3>
+        <nav class="flex flex-col gap-2">
+          {navData.links.map((link) => (
+            <a
+              href={link.href}
+              class="font-body text-sm text-green-100 hover:text-white transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      <!-- Contact & Links -->
+      <div>
+        <h3 class="font-heading text-lg font-semibold mb-4">Connect</h3>
+        <div class="flex flex-col gap-2 font-body text-sm text-green-100">
+          <a href={siteData.website} class="hover:text-white transition-colors" target="_blank" rel="noopener">
+            www.asmakam.org
+          </a>
+          <a href={siteData.cotfoo.website} class="hover:text-white transition-colors" target="_blank" rel="noopener">
+            Cotfoo - {siteData.cotfoo.fullName}
+          </a>
+          <a href={siteData.youtube} class="hover:text-white transition-colors" target="_blank" rel="noopener">
+            YouTube - Award Winning Short Film
+          </a>
+          <p class="mt-2 text-green-200">
+            {siteData.location}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-green-800 pt-8 text-center">
+      <p class="font-body text-sm text-green-200">
+        &copy; {new Date().getFullYear()} Asmakam Life University. Founded {siteData.founded}.
+      </p>
+    </div>
+  </div>
+</footer>

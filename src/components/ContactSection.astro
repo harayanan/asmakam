@@ -1,0 +1,26 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+
+const siteData = yaml.load(readFileSync('src/data/site.yaml', 'utf8')) as Record<string, any>;
+---
+
+<section class="relative bg-gradient-to-r from-forest to-leaf py-20">
+  <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <h2 class="font-heading text-3xl md:text-4xl text-white font-bold mb-4">
+      Begin Your Journey
+    </h2>
+    <p class="font-body text-lg text-green-100 mb-8 max-w-2xl mx-auto">
+      Discover your essence in harmony with Self, Society and the Universe.
+      Connect with us to learn more about our programs and experiences.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact" class="inline-block bg-white text-forest font-body font-semibold px-8 py-3 rounded-full hover:bg-sand transition-colors duration-300">
+        Get in Touch
+      </a>
+      <a href={siteData.youtube} target="_blank" rel="noopener" class="inline-block border-2 border-white text-white font-body font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors duration-300">
+        Watch Our Story
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TeamCard from '../components/TeamCard.astro';
+import CoCreators from '../components/CoCreators.astro';
+import Mentors from '../components/Mentors.astro';
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+
+const siteData = yaml.load(readFileSync('src/data/site.yaml', 'utf8')) as Record<string, any>;
+const teamData = yaml.load(readFileSync('src/data/team.yaml', 'utf8')) as Record<string, any>;
+---
+
+<BaseLayout title="About | Asmakam Life University" description="Learn about our team, co-creators and mentors.">
+  <Header />
+  <main>
+    <!-- Page Hero -->
+    <section class="bg-gradient-to-br from-forest to-leaf py-20">
+      <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="font-heading text-4xl md:text-5xl text-white font-bold mb-4">About Us</h1>
+        <p class="font-body text-lg text-green-100 max-w-2xl mx-auto">
+          {siteData.tagline}
+        </p>
+      </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="section-padding bg-cream">
+      <div class="container-narrow mx-auto">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="section-title mb-6">Who We Are</h2>
+          <p class="font-body text-lg text-text-muted leading-relaxed mb-6">
+            {teamData.intro}
+          </p>
+          <p class="font-body text-lg text-text-muted leading-relaxed mb-6">
+            {siteData.description}
+          </p>
+          <p class="font-body text-text-muted leading-relaxed">
+            Founded by IIT alumni in 2014, our journey's seeds are endless questions about how
+            every action and milestone in our life is dictated by society's conditioned belief system
+            and false definitions of growth, success and happiness. We envision to forge a path
+            towards a more meaningful life that resonates with the demands of our times.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Essence -->
+    <section class="section-padding bg-white">
+      <div class="container-wide mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {siteData.essence.map((item: any) => (
+            <div class="text-center p-8 rounded-2xl bg-gradient-to-b from-sand to-cream">
+              <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-forest/10 flex items-center justify-center">
+                <svg class="w-8 h-8 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                </svg>
+              </div>
+              <p class="font-heading text-lg font-semibold text-forest">{item.title}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section-padding bg-sand">
+      <div class="container-wide mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="section-title">{teamData.title}</h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {teamData.members.map((member: any) => (
+            <TeamCard
+              name={member.name}
+              role={member.role}
+              credential={member.credential}
+              bio={member.bio}
+              image={member.image}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CoCreators />
+    <Mentors />
+  </main>
+  <Footer />
+</BaseLayout>

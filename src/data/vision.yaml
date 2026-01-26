@@ -1,0 +1,46 @@
+title: "Vision"
+headline: "A Phygital modern gurukul"
+description: "A Phygital modern gurukul focused on"
+points:
+  - heading: "Creating"
+    text: >
+      A generation who is not a mere consumer of the system but creating a beautiful
+      universe and experiencing Interconnectedness.
+  - heading: "Practicing"
+    text: >
+      Sustainability, Resource optimization, Minimalism, Natural living, Regenerative
+      principles, Circular economy and going towards zero outsourcing for learning,
+      food and health.
+  - heading: "Co Creating"
+    text: >
+      An integrated lifelong learning path via bringing learners, parents, educators
+      and employers together for a life-oriented education in wilderness.
+  - heading: "Leveraging"
+    text: >
+      Multiple forms of wealth - Time, Community, Trust, Technology, Natural Resources,
+      Cultural Heritage, local economy and more.
+
+paradigmShift:
+  title: "Life Oriented Learning needs some Unlearning first"
+  subtitle: "Reimagining and Redesigning Education should lead us towards a paradigm mindset shift"
+  shifts:
+    - from: "Word"
+      to: "World"
+    - from: "Career"
+      to: "Conscious Living"
+    - from: "Competition"
+      to: "Collaboration"
+    - from: "Consumption"
+      to: "Creation"
+    - from: "Leadership"
+      to: "Laddership"
+    - from: "Growth"
+      to: "Prosperity"
+    - from: "Instant Gratification"
+      to: "Sustainability"
+    - from: "Transaction"
+      to: "Transformation"
+    - from: "Internet"
+      to: "Innernet"
+    - from: "Planning"
+      to: "Emergence"

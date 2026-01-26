@@ -1,0 +1,31 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+
+const visionData = yaml.load(readFileSync('src/data/vision.yaml', 'utf8')) as Record<string, any>;
+---
+
+<section class="section-padding bg-sand">
+  <div class="container-wide mx-auto">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="section-title">{visionData.title}</h2>
+        <p class="font-body text-xl md:text-2xl text-leaf font-medium mt-4">
+          A <span class="font-heading font-bold text-forest">Phygital modern gurukul</span> focused on
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        {visionData.points.map((point: any) => (
+          <div class="flex gap-4 items-start bg-white rounded-xl p-6 shadow-sm">
+            <div class="shrink-0 w-2 h-2 mt-3 rounded-full bg-lime"></div>
+            <div>
+              <span class="font-heading text-lg font-bold text-forest">{point.heading}</span>
+              <span class="font-body text-text-muted ml-1">— {point.text}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

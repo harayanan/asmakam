@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+
+const siteData = yaml.load(readFileSync('src/data/site.yaml', 'utf8')) as Record<string, any>;
+---
+
+<BaseLayout title="Contact | Asmakam Life University" description="Get in touch with Asmakam Life University.">
+  <Header />
+  <main>
+    <!-- Page Hero -->
+    <section class="bg-gradient-to-br from-forest to-leaf py-20">
+      <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="font-heading text-4xl md:text-5xl text-white font-bold mb-4">Get in Touch</h1>
+        <p class="font-body text-lg text-green-100 max-w-2xl mx-auto">
+          We'd love to hear from you. Reach out to learn more about our programs and community.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-padding bg-cream">
+      <div class="container-narrow mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Info -->
+          <div>
+            <h2 class="font-heading text-2xl text-forest font-bold mb-6">Contact Information</h2>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="shrink-0 w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-body font-semibold text-text-primary">Location</h3>
+                  <p class="font-body text-text-muted">{siteData.location}</p>
+                  <p class="font-body text-sm text-text-muted mt-1">15-acre food forest campus</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="shrink-0 w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-body font-semibold text-text-primary">Website</h3>
+                  <a href={siteData.website} target="_blank" rel="noopener" class="font-body text-leaf hover:text-forest transition-colors">
+                    www.asmakam.org
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="shrink-0 w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-body font-semibold text-text-primary">YouTube</h3>
+                  <a href={siteData.youtube} target="_blank" rel="noopener" class="font-body text-leaf hover:text-forest transition-colors block">
+                    Award Winning Short Film
+                  </a>
+                  <a href={siteData.ecoHouseVideo} target="_blank" rel="noopener" class="font-body text-leaf hover:text-forest transition-colors block mt-1">
+                    Asmakam Eco Natural House
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cotfoo -->
+            <div class="mt-10 p-6 bg-white rounded-2xl border border-gray-100">
+              <h3 class="font-heading text-lg font-semibold text-forest mb-2">{siteData.cotfoo.name}</h3>
+              <p class="font-body text-sm text-text-muted mb-3">{siteData.cotfoo.description}</p>
+              <a href={siteData.cotfoo.website} target="_blank" rel="noopener" class="font-body text-sm text-leaf hover:text-forest font-medium transition-colors">
+                {siteData.cotfoo.website} &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div>
+            <h2 class="font-heading text-2xl text-forest font-bold mb-6">Send Us a Message</h2>
+            <form class="space-y-6" action="#" method="POST">
+              <div>
+                <label for="name" class="block font-body text-sm font-medium text-text-primary mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 font-body text-text-primary
+                         focus:ring-2 focus:ring-leaf focus:border-leaf outline-none transition-colors bg-white"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label for="email" class="block font-body text-sm font-medium text-text-primary mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 font-body text-text-primary
+                         focus:ring-2 focus:ring-leaf focus:border-leaf outline-none transition-colors bg-white"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label for="subject" class="block font-body text-sm font-medium text-text-primary mb-2">Subject</label>
+                <select
+                  id="subject"
+                  name="subject"
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 font-body text-text-primary
+                         focus:ring-2 focus:ring-leaf focus:border-leaf outline-none transition-colors bg-white"
+                >
+                  <option value="">Select a topic</option>
+                  <option value="programs">Programs & Experiences</option>
+                  <option value="retreats">Wellness Retreats</option>
+                  <option value="collaboration">Collaboration</option>
+                  <option value="visit">Visit Campus</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block font-body text-sm font-medium text-text-primary mb-2">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 font-body text-text-primary
+                         focus:ring-2 focus:ring-leaf focus:border-leaf outline-none transition-colors bg-white resize-y"
+                  placeholder="Tell us about your interest..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full text-center">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

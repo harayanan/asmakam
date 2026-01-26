@@ -1,0 +1,53 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+import MobileNav from './MobileNav.tsx';
+
+const navData = yaml.load(readFileSync('src/data/navigation.yaml', 'utf8')) as {
+  links: { label: string; href: string }[];
+};
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-sand">
+  <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 shrink-0">
+        <img
+          src="/images/logo.png"
+          alt="Asmakam Life University"
+          class="h-10 md:h-14 w-auto"
+        />
+        <div class="hidden sm:block">
+          <span class="font-heading text-lg md:text-xl text-forest font-bold leading-tight block">
+            Asmakam
+          </span>
+          <span class="font-body text-xs text-text-muted leading-tight block">
+            Life University
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-1">
+        {navData.links.map((link) => (
+          <a
+            href={link.href}
+            class={`px-4 py-2 rounded-full font-body text-sm font-medium transition-colors ${
+              currentPath === link.href
+                ? 'text-forest bg-sand'
+                : 'text-text-primary hover:text-forest hover:bg-sand/50'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile Navigation (React Island) -->
+      <MobileNav client:load links={navData.links} currentPath={currentPath} />
+    </div>
+  </div>
+</header>

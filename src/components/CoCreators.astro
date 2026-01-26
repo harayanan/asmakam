@@ -1,0 +1,53 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+
+const cocreatorsData = yaml.load(readFileSync('src/data/cocreators.yaml', 'utf8')) as Record<string, any>;
+---
+
+<section class="section-padding bg-cream">
+  <div class="container-wide mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="section-title">{cocreatorsData.title}</h2>
+      <p class="section-subtitle mx-auto mt-4">{cocreatorsData.intro}</p>
+    </div>
+
+    <!-- Featured Co-Creators -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {cocreatorsData.featured.map((org: any) => (
+        <div class="card p-6 border border-gray-100">
+          <h3 class="font-heading text-xl font-semibold text-forest mb-1">{org.name}</h3>
+          {org.location && (
+            <p class="font-body text-xs text-text-muted mb-2">{org.location}</p>
+          )}
+          <p class="font-body text-sm text-leaf font-medium mb-3">{org.focus}</p>
+          <p class="font-body text-sm text-text-muted leading-relaxed">{org.description}</p>
+          {org.website && (
+            <a
+              href={org.website}
+              target="_blank"
+              rel="noopener"
+              class="inline-block mt-4 font-body text-sm text-leaf hover:text-forest font-medium transition-colors"
+            >
+              Visit Website &rarr;
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Other Co-Creators -->
+    <div>
+      <h3 class="font-heading text-2xl text-forest font-semibold text-center mb-8">
+        Our Wider Network
+      </h3>
+      <div class="flex flex-wrap justify-center gap-3">
+        {cocreatorsData.others.map((name: string) => (
+          <span class="font-body text-sm bg-white text-text-primary px-5 py-2.5 rounded-full shadow-sm border border-gray-100">
+            {name}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

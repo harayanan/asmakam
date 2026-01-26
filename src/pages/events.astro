@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import EventCard from '../components/EventCard.astro';
+import { getCollection } from 'astro:content';
+
+const now = new Date();
+const allEvents = (await getCollection('events', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+
+const upcoming = allEvents.filter(e => e.data.date >= now);
+const past = allEvents.filter(e => e.data.date < now);
+---
+
+<BaseLayout title="Events | Asmakam Life University" description="Upcoming events, retreats and programs at Asmakam Life University.">
+  <Header />
+  <main>
+    <!-- Page Hero -->
+    <section class="bg-gradient-to-br from-forest to-leaf py-20">
+      <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="font-heading text-4xl md:text-5xl text-white font-bold mb-4">Events</h1>
+        <p class="font-body text-lg text-green-100 max-w-2xl mx-auto">
+          Join us for retreats, workshops and immersive experiences
+        </p>
+      </div>
+    </section>
+
+    <section class="section-padding bg-cream">
+      <div class="container-wide mx-auto">
+        <!-- Upcoming Events -->
+        {upcoming.length > 0 ? (
+          <div>
+            <h2 class="section-title mb-8">Upcoming Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {upcoming.map((event) => (
+                <EventCard
+                  title={event.data.title}
+                  description={event.data.description}
+                  date={event.data.date}
+                  endDate={event.data.endDate}
+                  location={event.data.location}
+                  slug={event.slug}
+                  registrationLink={event.data.registrationLink}
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div class="text-center py-12 mb-16">
+            <svg class="w-16 h-16 text-forest/30 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <p class="font-body text-text-muted text-lg mb-2">No upcoming events at the moment.</p>
+            <p class="font-body text-text-muted">Check back soon or contact us to learn about future programs.</p>
+          </div>
+        )}
+
+        <!-- Past Events -->
+        {past.length > 0 && (
+          <div>
+            <h2 class="font-heading text-2xl text-text-muted font-semibold mb-8">Past Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-75">
+              {past.map((event) => (
+                <EventCard
+                  title={event.data.title}
+                  description={event.data.description}
+                  date={event.data.date}
+                  location={event.data.location}
+                  slug={event.slug}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

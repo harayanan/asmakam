@@ -1,0 +1,48 @@
+title: "3 Pillars of the Life University"
+pillars:
+  - name: "Sustainability"
+    icon: "leaf"
+    color: "forest"
+    summary: "Experience sustainable and natural living"
+    description: >
+      Experience sustainable/natural living, food forest, permaculture/natural farming,
+      natural building using regenerative ways.
+    details:
+      - "Food forest and permaculture"
+      - "Natural farming"
+      - "Natural building techniques"
+      - "Regenerative principles"
+      - "Circular economy"
+      - "Zero outsourcing for food"
+
+  - name: "Wellness"
+    icon: "heart"
+    color: "saffron"
+    summary: "Retreats for holistic well-being"
+    description: >
+      Retreats for mental, physical and social well-being including Food as medicine
+      (PBWF diet life style), Autophagy (water only fasting), Naturopathy, Yoga,
+      Relationship counseling and more.
+    details:
+      - "Food as medicine (PBWF diet)"
+      - "Autophagy (water only fasting)"
+      - "Naturopathy"
+      - "Yoga"
+      - "Relationship counseling"
+      - "Mental and social well-being"
+
+  - name: "Lifelong Learning"
+    icon: "book"
+    color: "plum"
+    summary: "Programs to enhance life skills"
+    description: >
+      Short/Long term programs to enhance life skills and hands-on learning - creativity
+      (artisans, designers), entrepreneurship, technical skills (STEM), and focused
+      programs for differently-abled kids.
+    details:
+      - "Creativity - artisans, designers"
+      - "Entrepreneurship"
+      - "Technical skills (STEM)"
+      - "Life skills development"
+      - "Programs for differently-abled children"
+      - "Hands-on experiential learning"

@@ -1,0 +1,45 @@
+---
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+
+const visionData = yaml.load(readFileSync('src/data/vision.yaml', 'utf8')) as Record<string, any>;
+const { paradigmShift } = visionData;
+---
+
+<section class="section-padding bg-earth text-white">
+  <div class="container-wide mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+        {paradigmShift.title}
+      </h2>
+      <p class="font-body text-lg text-amber-100 max-w-3xl mx-auto">
+        {paradigmShift.subtitle}
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="grid grid-cols-[1fr_auto_1fr] gap-y-3 items-center">
+        <!-- Header row -->
+        <div class="font-heading text-lg font-bold text-amber-200 text-right pr-4">From</div>
+        <div></div>
+        <div class="font-heading text-lg font-bold text-lime text-left pl-4">To</div>
+
+        {paradigmShift.shifts.map((shift: any) => (
+          <>
+            <div class="font-body text-right pr-4 text-amber-100 py-2 border-b border-white/10">
+              {shift.from}
+            </div>
+            <div class="flex justify-center py-2 border-b border-white/10">
+              <svg class="w-5 h-5 text-lime" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="font-body text-left pl-4 text-white font-medium py-2 border-b border-white/10">
+              {shift.to}
+            </div>
+          </>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
