@@ -12,7 +12,7 @@ const programsData = yaml.load(readFileSync('src/data/programs.yaml', 'utf8')) a
 const pillarsData = yaml.load(readFileSync('src/data/pillars.yaml', 'utf8')) as Record<string, any>;
 
 const pillarImages = [
-  'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80', // Sustainability - green plants
+  '/images/campus-entrance.png',   // Sustainability - real Asmakam natural house
   'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',    // Wellness - yoga/meditation
   'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',  // Learning - students
 ];
@@ -101,30 +101,6 @@ const iconMap: Record<string, string> = {
               <p class="font-body text-sm text-text-muted leading-relaxed">
                 {program.description}
               </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Special Programs -->
-    <section class="section-padding bg-sand">
-      <div class="container-wide mx-auto">
-        <div class="text-center mb-12 animate-fade-in-up">
-          <p class="font-body text-sm tracking-[0.2em] uppercase text-leaf mb-3">Unique Offerings</p>
-          <h2 class="section-title">Special Programs</h2>
-          <div class="w-16 h-1 bg-gradient-to-r from-forest to-lime mx-auto mt-6 rounded-full"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {programsData.specialPrograms.map((program: any, i: number) => (
-            <div class="group card p-8 border border-gray-100 hover:border-lime/30 animate-fade-in-up">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-forest to-leaf flex items-center justify-center shrink-0">
-                  <span class="text-white font-heading font-bold text-lg">{i + 1}</span>
-                </div>
-                <h3 class="font-heading text-xl font-semibold text-forest group-hover:text-leaf transition-colors">{program.name}</h3>
-              </div>
-              <p class="font-body text-text-muted leading-relaxed">{program.description}</p>
             </div>
           ))}
         </div>
