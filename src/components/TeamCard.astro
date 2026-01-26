@@ -16,9 +16,18 @@ const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2);
   <div class="flex flex-col sm:flex-row gap-6">
     <!-- Photo / Placeholder -->
     <div class="shrink-0 self-center sm:self-start">
-      <div class="w-24 h-24 rounded-full bg-gradient-to-br from-forest to-lime flex items-center justify-center text-white font-heading text-2xl font-bold">
-        {initials}
-      </div>
+      {image ? (
+        <img
+          src={image}
+          alt={name}
+          class="w-24 h-24 rounded-full object-cover shadow-md border-2 border-lime/30"
+          loading="lazy"
+        />
+      ) : (
+        <div class="w-24 h-24 rounded-full bg-gradient-to-br from-forest to-lime flex items-center justify-center text-white font-heading text-2xl font-bold">
+          {initials}
+        </div>
+      )}
     </div>
 
     <!-- Info -->
