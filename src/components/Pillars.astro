@@ -4,43 +4,56 @@ import { readFileSync } from 'fs';
 
 const pillarsData = yaml.load(readFileSync('src/data/pillars.yaml', 'utf8')) as Record<string, any>;
 
+const pillarImages = [
+  'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80',
+  'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80',
+  'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80',
+];
+
 const iconMap: Record<string, string> = {
-  leaf: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.85 0 3.58-.5 5.07-1.38C14.89 18.44 13 15.44 13 12c0-3.44 1.89-6.44 4.07-8.62A9.953 9.953 0 0012 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l-5 5m0 0l-3-3"/></svg>`,
-  heart: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>`,
-  book: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>`,
+  leaf: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.85 0 3.58-.5 5.07-1.38C14.89 18.44 13 15.44 13 12c0-3.44 1.89-6.44 4.07-8.62A9.953 9.953 0 0012 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l-5 5m0 0l-3-3"/></svg>`,
+  heart: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>`,
+  book: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>`,
 };
 
-const colorMap: Record<string, string> = {
-  forest: 'bg-forest/10 text-forest',
-  saffron: 'bg-saffron/10 text-saffron',
-  plum: 'bg-plum/10 text-plum',
-};
-
-const borderColorMap: Record<string, string> = {
-  forest: 'border-forest/20',
-  saffron: 'border-saffron/20',
-  plum: 'border-plum/20',
+const gradientMap: Record<string, string> = {
+  forest: 'from-forest to-leaf',
+  saffron: 'from-saffron to-orange-400',
+  plum: 'from-plum to-purple-400',
 };
 ---
 
-<section class="section-padding bg-cream">
+<section class="section-padding bg-cream bg-leaf-pattern">
   <div class="container-wide mx-auto">
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 animate-fade-in-up">
+      <p class="font-body text-sm tracking-[0.2em] uppercase text-leaf mb-3">Our Foundation</p>
       <h2 class="section-title">{pillarsData.title}</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-forest to-lime mx-auto mt-6 rounded-full"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {pillarsData.pillars.map((pillar: any) => (
-        <div class={`card p-8 border ${borderColorMap[pillar.color] || 'border-gray-100'} text-center`}>
-          <div class={`inline-flex items-center justify-center w-20 h-20 rounded-full ${colorMap[pillar.color] || 'bg-gray-100 text-gray-600'} mb-6`}>
-            <Fragment set:html={iconMap[pillar.icon] || ''} />
+      {pillarsData.pillars.map((pillar: any, i: number) => (
+        <div class={`group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 animate-fade-in-up delay-${(i + 1) * 100}`}>
+          <!-- Background image -->
+          <div class="absolute inset-0">
+            <img src={pillarImages[i]} alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+            <div class={`absolute inset-0 bg-gradient-to-t ${gradientMap[pillar.color]} opacity-80 group-hover:opacity-85 transition-opacity duration-500`}></div>
           </div>
-          <h3 class="font-heading text-2xl text-text-primary font-semibold mb-3">
-            {pillar.name}
-          </h3>
-          <p class="font-body text-text-muted leading-relaxed">
-            {pillar.description}
-          </p>
+
+          <!-- Content -->
+          <div class="relative z-10 p-8 md:p-10 min-h-[360px] flex flex-col justify-end text-white">
+            <div class="mb-auto pt-4">
+              <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <Fragment set:html={iconMap[pillar.icon] || ''} />
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold mb-3">
+              {pillar.name}
+            </h3>
+            <p class="font-body text-white/90 leading-relaxed text-sm md:text-base">
+              {pillar.description}
+            </p>
+          </div>
         </div>
       ))}
     </div>

@@ -6,39 +6,54 @@ const visionData = yaml.load(readFileSync('src/data/vision.yaml', 'utf8')) as Re
 const { paradigmShift } = visionData;
 ---
 
-<section class="section-padding bg-earth text-white">
-  <div class="container-wide mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+<section class="relative section-padding overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0">
+    <img
+      src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80"
+      alt=""
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-br from-earth/95 via-earth/90 to-forest/85"></div>
+  </div>
+
+  <div class="container-wide mx-auto relative z-10">
+    <div class="text-center mb-14 animate-fade-in-up">
+      <p class="font-body text-sm tracking-[0.2em] uppercase text-lime mb-3">Unlearning</p>
+      <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
         {paradigmShift.title}
       </h2>
-      <p class="font-body text-lg text-amber-100 max-w-3xl mx-auto">
+      <p class="font-body text-lg text-amber-100/80 max-w-3xl mx-auto">
         {paradigmShift.subtitle}
       </p>
+      <div class="w-16 h-1 bg-gradient-to-r from-lime to-gold mx-auto mt-6 rounded-full"></div>
     </div>
 
-    <div class="max-w-3xl mx-auto">
-      <div class="grid grid-cols-[1fr_auto_1fr] gap-y-3 items-center">
-        <!-- Header row -->
-        <div class="font-heading text-lg font-bold text-amber-200 text-right pr-4">From</div>
-        <div></div>
-        <div class="font-heading text-lg font-bold text-lime text-left pl-4">To</div>
+    <div class="max-w-3xl mx-auto animate-fade-in-up delay-200">
+      <div class="glass-card !bg-white/10 !border-white/10 p-6 md:p-10 backdrop-blur-lg">
+        <div class="grid grid-cols-[1fr_auto_1fr] gap-y-0 items-center">
+          <!-- Header row -->
+          <div class="font-heading text-base md:text-lg font-bold text-amber-300 text-right pr-4 md:pr-6 pb-4 border-b border-white/20">From</div>
+          <div class="pb-4 border-b border-white/20"></div>
+          <div class="font-heading text-base md:text-lg font-bold text-lime text-left pl-4 md:pl-6 pb-4 border-b border-white/20">To</div>
 
-        {paradigmShift.shifts.map((shift: any) => (
-          <>
-            <div class="font-body text-right pr-4 text-amber-100 py-2 border-b border-white/10">
-              {shift.from}
-            </div>
-            <div class="flex justify-center py-2 border-b border-white/10">
-              <svg class="w-5 h-5 text-lime" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-              </svg>
-            </div>
-            <div class="font-body text-left pl-4 text-white font-medium py-2 border-b border-white/10">
-              {shift.to}
-            </div>
-          </>
-        ))}
+          {paradigmShift.shifts.map((shift: any, i: number) => (
+            <>
+              <div class="font-body text-right pr-4 md:pr-6 text-amber-100/80 py-3 border-b border-white/5 text-sm md:text-base hover:text-amber-200 transition-colors">
+                {shift.from}
+              </div>
+              <div class="flex justify-center py-3 border-b border-white/5">
+                <svg class="w-5 h-5 text-lime/70" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div class="font-body text-left pl-4 md:pl-6 text-white font-medium py-3 border-b border-white/5 text-sm md:text-base">
+                {shift.to}
+              </div>
+            </>
+          ))}
+        </div>
       </div>
     </div>
   </div>

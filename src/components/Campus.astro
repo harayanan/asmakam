@@ -7,9 +7,10 @@ const campusData = yaml.load(readFileSync('src/data/campus.yaml', 'utf8')) as Re
 
 <section class="section-padding bg-cream">
   <div class="container-wide mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text Content -->
-      <div>
+      <div class="animate-fade-in-left">
+        <p class="font-body text-sm tracking-[0.2em] uppercase text-leaf mb-3">Our Home</p>
         <h2 class="section-title mb-6">{campusData.title}</h2>
         <p class="font-body text-lg text-text-muted leading-relaxed mb-6">
           {campusData.description}
@@ -19,29 +20,33 @@ const campusData = yaml.load(readFileSync('src/data/campus.yaml', 'utf8')) as Re
         </p>
         <div class="flex flex-wrap gap-3">
           {campusData.features.map((feature: string) => (
-            <span class="font-body text-sm bg-forest/10 text-forest px-4 py-2 rounded-full">
+            <span class="font-body text-sm bg-forest/10 text-forest px-4 py-2 rounded-full border border-forest/10 hover:bg-forest hover:text-white transition-colors duration-300 cursor-default">
               {feature}
             </span>
           ))}
         </div>
       </div>
 
-      <!-- Image placeholder with decorative styling -->
-      <div class="relative">
-        <div class="bg-gradient-to-br from-forest/20 to-lime/20 rounded-3xl aspect-[4/3] flex items-center justify-center overflow-hidden">
-          <div class="text-center p-8">
-            <svg class="w-16 h-16 text-forest/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
-            </svg>
-            <p class="font-body text-forest/60 text-sm">
-              Campus in the Food Forest<br/>
-              <span class="text-xs text-forest/40">{campusData.location}</span>
-            </p>
+      <!-- Image with decorative elements -->
+      <div class="relative animate-fade-in-right">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <img
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80"
+            alt="Natural food forest landscape"
+            class="w-full aspect-[4/3] object-cover"
+            loading="lazy"
+          />
+          <!-- Gradient overlay at bottom for text -->
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-forest/80 to-transparent p-6">
+            <p class="font-heading text-white text-lg font-semibold">{campusData.location}</p>
+            <p class="font-body text-green-200 text-sm">{campusData.locationHighlight}</p>
           </div>
         </div>
-        <!-- Decorative element -->
-        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-lime/20 rounded-full -z-10"></div>
-        <div class="absolute -top-4 -left-4 w-16 h-16 bg-gold/20 rounded-full -z-10"></div>
+        <!-- Decorative elements -->
+        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-lime/20 rounded-full blur-xl -z-10"></div>
+        <div class="absolute -top-6 -left-6 w-24 h-24 bg-gold/20 rounded-full blur-xl -z-10"></div>
+        <div class="absolute top-4 -right-3 w-6 h-6 bg-lime rounded-full animate-float shadow-lg hidden md:block"></div>
+        <div class="absolute -bottom-3 left-8 w-4 h-4 bg-gold rounded-full animate-float-delayed shadow-lg hidden md:block"></div>
       </div>
     </div>
   </div>

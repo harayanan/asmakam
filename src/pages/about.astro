@@ -16,10 +16,14 @@ const teamData = yaml.load(readFileSync('src/data/team.yaml', 'utf8')) as Record
   <Header />
   <main>
     <!-- Page Hero -->
-    <section class="bg-gradient-to-br from-forest to-leaf py-20">
-      <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="font-heading text-4xl md:text-5xl text-white font-bold mb-4">About Us</h1>
-        <p class="font-body text-lg text-green-100 max-w-2xl mx-auto">
+    <section class="relative py-24 md:py-28 overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80" alt="" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-br from-forest/85 via-forest/70 to-leaf/60"></div>
+      </div>
+      <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 animate-fade-in-up drop-shadow-lg">About Us</h1>
+        <p class="font-body text-lg text-green-100 max-w-2xl mx-auto animate-fade-in-up delay-200">
           {siteData.tagline}
         </p>
       </div>

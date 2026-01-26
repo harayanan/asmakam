@@ -3,25 +3,48 @@ import yaml from 'js-yaml';
 import { readFileSync } from 'fs';
 
 const visionData = yaml.load(readFileSync('src/data/vision.yaml', 'utf8')) as Record<string, any>;
+
+const pointIcons = [
+  `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+  `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>`,
+  `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
+  `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+];
 ---
 
-<section class="section-padding bg-sand">
-  <div class="container-wide mx-auto">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
+<section class="relative section-padding overflow-hidden">
+  <!-- Background image with overlay -->
+  <div class="absolute inset-0">
+    <img
+      src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1920&q=80"
+      alt=""
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-br from-sand/95 via-sand/90 to-cream/95"></div>
+  </div>
+
+  <div class="container-wide mx-auto relative z-10">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14 animate-fade-in-up">
+        <p class="font-body text-sm tracking-[0.2em] uppercase text-leaf mb-3">Our Purpose</p>
         <h2 class="section-title">{visionData.title}</h2>
-        <p class="font-body text-xl md:text-2xl text-leaf font-medium mt-4">
-          A <span class="font-heading font-bold text-forest">Phygital modern gurukul</span> focused on
+        <p class="font-heading text-xl md:text-2xl text-earth font-medium mt-6">
+          A <span class="text-gradient font-bold text-2xl md:text-3xl">Phygital modern gurukul</span> focused on
         </p>
       </div>
 
-      <div class="space-y-6">
-        {visionData.points.map((point: any) => (
-          <div class="flex gap-4 items-start bg-white rounded-xl p-6 shadow-sm">
-            <div class="shrink-0 w-2 h-2 mt-3 rounded-full bg-lime"></div>
-            <div>
-              <span class="font-heading text-lg font-bold text-forest">{point.heading}</span>
-              <span class="font-body text-text-muted ml-1">— {point.text}</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {visionData.points.map((point: any, i: number) => (
+          <div class={`glass-card p-6 md:p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 animate-fade-in-up delay-${(i + 1) * 100}`}>
+            <div class="flex gap-5 items-start">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-forest to-lime flex items-center justify-center text-white shadow-md">
+                <Fragment set:html={pointIcons[i]} />
+              </div>
+              <div>
+                <h3 class="font-heading text-xl font-bold text-forest mb-2">{point.heading}</h3>
+                <p class="font-body text-text-muted leading-relaxed text-sm md:text-base">{point.text}</p>
+              </div>
             </div>
           </div>
         ))}
