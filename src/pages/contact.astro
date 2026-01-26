@@ -127,94 +127,26 @@ const siteData = yaml.load(readFileSync('src/data/site.yaml', 'utf8')) as Record
             </div>
           </div>
 
-          <!-- Contact Form -->
+          <!-- Google Maps -->
           <div class="animate-fade-in-right">
-            <h2 class="font-heading text-2xl text-forest font-bold mb-8">Send Us a Message</h2>
-            <form class="space-y-6 glass-card p-8" action="#" method="POST">
-              <div>
-                <label for="name" class="block font-body text-sm font-medium text-text-primary mb-2">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 font-body text-text-primary
-                         focus:ring-2 focus:ring-leaf focus:border-leaf outline-none transition-all bg-white
-                         hover:border-leaf/50 shadow-sm"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label for="email" class="block font-body text-sm font-medium text-text-primary mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 font-body text-text-primary
-                         focus:ring-2 focus:ring-leaf focus:border-leaf outline-none transition-all bg-white
-                         hover:border-leaf/50 shadow-sm"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label for="subject" class="block font-body text-sm font-medium text-text-primary mb-2">Subject</label>
-                <select
-                  id="subject"
-                  name="subject"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 font-body text-text-primary
-                         focus:ring-2 focus:ring-leaf focus:border-leaf outline-none transition-all bg-white
-                         hover:border-leaf/50 shadow-sm"
-                >
-                  <option value="">Select a topic</option>
-                  <option value="programs">Programs & Experiences</option>
-                  <option value="retreats">Wellness Retreats</option>
-                  <option value="collaboration">Collaboration</option>
-                  <option value="visit">Visit Campus</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label for="message" class="block font-body text-sm font-medium text-text-primary mb-2">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 font-body text-text-primary
-                         focus:ring-2 focus:ring-leaf focus:border-leaf outline-none transition-all bg-white resize-y
-                         hover:border-leaf/50 shadow-sm"
-                  placeholder="Tell us about your interest..."
-                ></textarea>
-              </div>
-              <button type="submit" class="btn-primary w-full text-center">
-                Send Message
-              </button>
-            </form>
+            <h2 class="font-heading text-2xl text-forest font-bold mb-6">Find Us</h2>
+            <div class="rounded-2xl overflow-hidden shadow-xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.5!2d75.85!3d22.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM5JzAwLjAiTiA3NcKwNTEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Asmakam+Life+University+Indore"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Asmakam Life University Location"
+              ></iframe>
+            </div>
+            <p class="font-body text-sm text-text-muted mt-4">
+              {siteData.address}
+            </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Google Maps -->
-    <section class="bg-white">
-      <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 class="font-heading text-2xl text-forest font-bold mb-6 text-center">Find Us</h2>
-        <div class="rounded-2xl overflow-hidden shadow-xl">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.5!2d75.85!3d22.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM5JzAwLjAiTiA3NcKwNTEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Asmakam+Life+University+Indore"
-            width="100%"
-            height="400"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Asmakam Life University Location"
-          ></iframe>
-        </div>
-        <p class="font-body text-sm text-text-muted text-center mt-4">
-          {siteData.address}
-        </p>
       </div>
     </section>
   </main>
