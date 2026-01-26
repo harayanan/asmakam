@@ -25,6 +25,17 @@ members:
       with youth across the globe to motivate their inner potential.
     image: "/images/team/manish.jpg"
 
+  - name: "Maitreyee Gehlot"
+    role: "Co-Founder"
+    credential: "Georgia Tech/ASU/UC USA, Samsung USA, Cotfoo"
+    bio: >
+      Professionally working as Project/Product Manager. As a self learner, her inner
+      and outer learning journeys led her to question many things about the fast-paced
+      and unsustainable lives we lead in today's capitalistic society. Being a young
+      entrepreneur and building two social impact startups has instilled in-depth
+      professional, technical, interpersonal, leadership and life skills.
+    image: "/images/team/maitreyee.jpg"
+
   - name: "Sakshi Bhatia"
     role: "Co-Creator"
     credential: "IIT Delhi - Comp Science, ML/AI expert, ex-American Express"
@@ -45,20 +56,9 @@ members:
       educating others about sustainability, permaculture, and natural living.
     image: "/images/team/arpit.png"
 
-  - name: "Maitreyee Gehlot"
-    role: "Co-Founder"
-    credential: "Georgia Tech/ASU/UC USA, Samsung USA, Cotfoo"
-    bio: >
-      Professionally working as Project/Product Manager. As a self learner, her inner
-      and outer learning journeys led her to question many things about the fast-paced
-      and unsustainable lives we lead in today's capitalistic society. Being a young
-      entrepreneur and building two social impact startups has instilled in-depth
-      professional, technical, interpersonal, leadership and life skills.
-    image: "/images/team/maitreyee.jpg"
-
   - name: "Harish Narayanan"
     role: "Advisor"
-    credential: "IIM Lucknow, CMO HDFC AMC, Ex CMO Myntra, CGO Upstock"
+    credential: "IIM Lucknow, CMO HDFC AMC, Ex CMO Myntra, CGO Upstox"
     bio: >
       Award-winning CXO, and Growth & Marketing leader. He has been awarded CMO Super 30,
       Digital CMO of the Year, ET Brand Equity Awards, CMO Asia Award, among many others.
