@@ -6,25 +6,15 @@ const siteData = yaml.load(readFileSync('src/data/site.yaml', 'utf8')) as Record
 ---
 
 <section class="relative min-h-[90vh] flex items-center overflow-hidden">
-  <!-- Background image -->
+  <!-- Background image (blurred) -->
   <div class="absolute inset-0">
     <img
-      src="/images/campus-overview.png"
+      src="/images/community-gathering.jpg"
       alt=""
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover blur-[6px] scale-105"
       loading="eager"
     />
-    <div class="absolute inset-0 bg-gradient-to-br from-forest/85 via-forest/70 to-leaf/60"></div>
-  </div>
-
-  <!-- Floating decorative blobs -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute top-20 left-10 w-64 h-64 bg-lime/10 rounded-full blur-3xl animate-float"></div>
-    <div class="absolute bottom-20 right-10 w-80 h-80 bg-gold/10 rounded-full blur-3xl animate-float-delayed"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl"></div>
-    <!-- Spinning decorative ring -->
-    <div class="absolute top-10 right-20 w-32 h-32 border border-white/10 rounded-full animate-gentle-spin hidden md:block"></div>
-    <div class="absolute bottom-32 left-20 w-20 h-20 border border-lime/15 rounded-full animate-gentle-spin hidden md:block"></div>
+    <div class="absolute inset-0 bg-black/30"></div>
   </div>
 
   <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 relative z-10">
@@ -35,15 +25,15 @@ const siteData = yaml.load(readFileSync('src/data/site.yaml', 'utf8')) as Record
       </h1>
 
       <!-- Subtitle -->
-      <p class="font-body text-lg md:text-xl lg:text-2xl text-green-100 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+      <p class="font-body text-lg md:text-xl lg:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-200">
         {siteData.subtitle}
       </p>
 
       <!-- Divider line -->
-      <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-lime to-transparent mx-auto mb-8 animate-fade-in-up delay-300"></div>
+      <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-white/60 to-transparent mx-auto mb-8 animate-fade-in-up delay-300"></div>
 
       <!-- Motto -->
-      <p class="font-body text-sm md:text-base text-lime/90 tracking-[0.3em] uppercase mb-12 animate-fade-in-up delay-300">
+      <p class="font-body text-sm md:text-base text-white/70 tracking-[0.3em] uppercase mb-12 animate-fade-in-up delay-300">
         {siteData.motto}
       </p>
 
