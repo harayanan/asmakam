@@ -80,6 +80,7 @@ npm run preview      # Preview built site
 ## Shadow Pages (Not in Navigation)
 
 - `/meeting-feb-2026` — Summary of the first founding team meeting (Feb 28, 2026). AI-transcribed from audio recording. Contains discussion points, takeaways, action items, quotes, and open questions. Accessible by direct URL only.
+- `/foundingcircle` — Founding Circle membership page adapted from Lovable prototype (asmakam-founding-circle.lovable.app). Hero, six-pillar grid, two-tier pricing ($5k / $10k+), progress toward 25,000-tree canopy, Manish contact CTAs. Assets under `public/images/founding-circle/`.
 
 ## Known Gaps
 
@@ -89,6 +90,12 @@ npm run preview      # Preview built site
 
 ## Session Log
 
+### 2026-04-12
+- Added shadow page `/foundingcircle` — adapted from Lovable prototype, same design tokens as site
+- 5 images downloaded from Lovable to `public/images/founding-circle/`
+- Not added to navigation.yaml (shadow page, direct URL only)
+- Deployed to Vercel production (asmakam.org/foundingcircle)
+
 ### 2026-02-28
 - Added shadow page `/meeting-feb-2026` — first founders' meeting summary
 - Audio (m4a) downloaded from Google Drive, converted to mp3, transcribed via Gemini 2.0 Flash
@@ -96,4 +103,4 @@ npm run preview      # Preview built site
 - Deployed to Vercel production
 
 ---
-*Last reviewed: 2026-02-28*
+*Last reviewed: 2026-04-12*
