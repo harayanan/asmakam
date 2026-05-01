@@ -1,0 +1,399 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pillars = [
+  {
+    title: 'Family & Roots',
+    subtitle: "Grandparents' wisdom, grandchildren's curiosity",
+    body: "Grandparents teach. Grandchildren question. Parents exhale. For NRI families: the India visit that actually roots your children in something real — language, soil, ancestral knowing.",
+  },
+  {
+    title: 'Ecological Living',
+    subtitle: 'Soil, season, harvest',
+    body: 'Agroforestry walks, natural building, food forest stewardship. Hands in soil not as metaphor — as practice. As recalibration.',
+  },
+  {
+    title: 'Natural Healing',
+    subtitle: 'Body, nature, reversal',
+    body: 'Circadian reset, sun bathing, mud therapy, silence, Indic wellness practices. For those carrying the weight of lifestyle disorders — not a detox package, but a slower, deeper reversal rooted in how the body was always meant to live.',
+  },
+  {
+    title: 'Wisdom & Culture',
+    subtitle: 'Living curriculum',
+    body: 'Craft, traditional knowledge, elder circles, Indic practices — not as heritage tourism, but as transmission. Things that belong to you and were never meant to be sold back.',
+  },
+  {
+    title: 'Leadership & Reflection',
+    subtitle: 'Retreats for unlearning',
+    body: "For teams and individuals ready to sit with difficult questions. Ecological thinking as a lens for systems, organisations, and the kind of leadership that doesn't burn what it leads.",
+  },
+  {
+    title: 'Meaningful Vanprastha',
+    subtitle: 'Gift your years forward',
+    body: "For you who've gathered a lifetime of experience and learning — it's time to gift it forward to the younger generation, to community, and to mother earth. We are eager to co-create unique learning programs with you.",
+  },
+];
+
+const foundingTier = [
+  'Full founding circle access',
+  'Seasonal immersions and events',
+  'Guest passes — for family back home, for parents who deserve a pause',
+  'Advisory input on programming',
+  'Founding recognition, always',
+];
+
+const lifetimeTier = [
+  'Everything in Founding Member package, plus',
+  'Permanent access — no expiry',
+  'Priority for longer stays',
+  'Closer advisory dialogue',
+  'First access to new spaces as built',
+];
+
+const treesSustained = 6600;
+const seatsJoined = 8;
+const seatsRemaining = 92;
+const seatsTotal = 100;
+---
+
+<BaseLayout
+  title="Founding Circle | Asmakam"
+  description="15 acres of food forest near Indore. A founding community for NRIs reclaiming wellness, culture & consciousness. 100 seats. Not a resort — a homecoming."
+>
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative py-24 md:py-32 overflow-hidden bg-cream">
+      <div class="absolute inset-0">
+        <img
+          src="/images/founding-circle/aerial-view.webp"
+          alt="Aerial view of Asmakam's 15-acre food forest near Indore"
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-forest/80 via-forest/60 to-forest/85"></div>
+      </div>
+      <div class="container-narrow mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <h1 class="font-heading text-5xl md:text-7xl text-white font-bold mb-6 animate-fade-in-up drop-shadow-lg">
+          अस्माकम्
+        </h1>
+        <p class="font-heading italic text-xl md:text-2xl text-sand mb-3 animate-fade-in-up delay-100">
+          Let's pause to Listen, Live &amp; Experience.
+        </p>
+        <p class="font-body text-lg text-green-100/90 mb-8 animate-fade-in-up delay-200">
+          Because the deepest learnings are not taught — but shared.
+        </p>
+        <div class="inline-flex flex-wrap justify-center items-center gap-x-4 gap-y-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 font-body text-sm md:text-base text-white animate-fade-in-up delay-300">
+          <span>Ecological Living</span>
+          <span class="text-gold">·</span>
+          <span>Holistic Wellbeing</span>
+          <span class="text-gold">·</span>
+          <span>Life Skills</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Space -->
+    <section class="section-padding bg-cream">
+      <div class="container-narrow mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="section-title">The Space</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 items-start mb-16">
+          <div class="space-y-5 font-body text-text-muted leading-relaxed text-lg">
+            <p>
+              A living commons rooted in the intent to restore our relationship with nature, community
+              &amp; with ourselves. A living experiment that started as one family's question —
+              <em>what happens when you stop outsourcing your life?</em> — and is now growing into
+              something shared.
+            </p>
+            <p>
+              Through our work on the land — growing a biodiverse permaculture food forest, conserving
+              water, regenerating soil, building a natural residential campus using ancient architecture
+              techniques of local materials e.g. stones, lime, urad daal, methi, jaggery, gond — we
+              continue to learn from life itself, as it unfolds at Asmakam.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <img
+              src="/images/founding-circle/natural-building.webp"
+              alt="Dome construction using traditional building techniques"
+              class="w-full h-56 md:h-64 object-cover rounded-sm shadow-lg"
+              loading="lazy"
+            />
+            <img
+              src="/images/founding-circle/sanctuary-render.webp"
+              alt="Asmakam sanctuary building render"
+              class="w-full h-56 md:h-64 object-cover rounded-sm shadow-lg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <p class="font-heading italic text-xl md:text-2xl text-forest mb-2">
+            अस्माकम् means "ours." Not mine. Not yours.
+          </p>
+          <p class="font-body text-text-muted">
+            What's growing here belongs to all who tend it.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center p-8 rounded-2xl bg-gradient-to-b from-sand to-cream">
+            <p class="font-heading text-4xl md:text-5xl text-forest font-bold mb-2">5,000+</p>
+            <p class="font-body text-text-muted">trees planted</p>
+          </div>
+          <div class="text-center p-8 rounded-2xl bg-gradient-to-b from-sand to-cream">
+            <p class="font-heading text-4xl md:text-5xl text-forest font-bold mb-2">25,000</p>
+            <p class="font-body text-text-muted">the regenerative canopy goal</p>
+          </div>
+          <div class="text-center p-8 rounded-2xl bg-gradient-to-b from-sand to-cream">
+            <p class="font-heading text-4xl md:text-5xl text-forest font-bold mb-2">15</p>
+            <p class="font-body text-text-muted">acres of living commons</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Find Here -->
+    <section class="section-padding bg-white">
+      <div class="container-wide mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="section-title">What You Find Here</h2>
+          <p class="section-subtitle mx-auto">Six ways to return.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pillars.map((pillar) => (
+            <div class="card p-8 bg-gradient-to-b from-cream to-sand">
+              <h3 class="font-heading text-2xl text-forest font-semibold mb-2">{pillar.title}</h3>
+              <p class="font-body text-sm uppercase tracking-wide text-leaf font-medium mb-4">
+                {pillar.subtitle}
+              </p>
+              <p class="font-body text-text-muted leading-relaxed">{pillar.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Founding Circle Tiers -->
+    <section class="section-padding bg-sand">
+      <div class="container-narrow mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Founding Circle</h2>
+          <p class="font-heading italic text-xl text-leaf mb-4">{seatsTotal} Seats</p>
+          <p class="section-subtitle mx-auto">
+            Before this opens to everyone, a few people get to help shape it. Early members whose
+            voices carry weight because they arrived first.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Founding Member -->
+          <div class="card p-8 md:p-10 bg-white">
+            <h3 class="font-heading text-2xl text-forest font-semibold mb-2">Founding Member</h3>
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="font-heading text-5xl text-saffron font-bold">$5,000</span>
+            </div>
+            <p class="font-body text-sm text-text-muted mb-6">Valid 5 years · ~200 bed-nights</p>
+
+            <ul class="space-y-3">
+              {foundingTier.map((item) => (
+                <li class="flex gap-3 font-body text-text-primary">
+                  <span class="text-leaf flex-shrink-0 mt-1">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Lifetime Founding Member -->
+          <div class="card p-8 md:p-10 bg-gradient-to-br from-forest to-leaf text-white relative overflow-hidden">
+            <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-gold text-forest text-xs font-body font-semibold uppercase tracking-wide">
+              Lifetime
+            </div>
+            <h3 class="font-heading text-2xl font-semibold mb-2">Lifetime Founding Member</h3>
+            <div class="flex items-baseline gap-2 mb-1">
+              <span class="font-heading text-5xl text-gold font-bold">$10,000+</span>
+            </div>
+            <p class="font-body text-sm text-green-100 mb-6">Permanent · ~400 bed-nights</p>
+
+            <ul class="space-y-3">
+              {lifetimeTier.map((item) => (
+                <li class="flex gap-3 font-body">
+                  <span class="text-gold flex-shrink-0 mt-1">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <p class="font-body text-sm text-text-muted italic text-center max-w-2xl mx-auto mt-10">
+          For Indian families and Indore locals, a local engagement pathway is in design — we'll
+          share it once we're sure of what we can honour.
+        </p>
+      </div>
+    </section>
+
+    <!-- So Far and Years Ahead -->
+    <section class="section-padding bg-cream">
+      <div class="container-narrow mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="section-title">So Far and Years Ahead</h2>
+          <p class="section-subtitle mx-auto">
+            Founded in 2014. Residential campus opens end of 2026.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-10">
+          <img
+            src="/images/founding-circle/tree-planting.webp"
+            alt="Tree planting and farm work at Asmakam"
+            class="w-full h-64 md:h-80 object-cover rounded-sm shadow-lg"
+            loading="lazy"
+          />
+          <div class="space-y-5 font-body text-text-muted leading-relaxed">
+            <p>
+              Founder's family's journey has emerged into a community of conscious and sustainable
+              enthusiasts hosting service space retreats, faculty reorientation workshops, Sunday
+              listening circles, plantation drives, children's deep-roots summer camps, life skills
+              workshops, repair and zero-waste festivals, circular and gift economy gatherings,
+              creative coworking sessions, and the full campus launch celebration.
+            </p>
+            <p class="font-heading italic text-lg text-forest">
+              The land is alive. The forest is growing. The community is thriving. The rest follows.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Living Legacy / Progress -->
+    <section class="relative section-padding overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="/images/founding-circle/community-gathering.webp"
+          alt=""
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-br from-forest/90 via-forest/85 to-leaf/85"></div>
+      </div>
+
+      <div class="container-narrow mx-auto relative z-10 text-white">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <p class="font-body text-sm uppercase tracking-widest text-gold mb-3">A Living Legacy</p>
+          <h2 class="font-heading text-3xl md:text-5xl font-bold mb-6">
+            Every founding seat sustains 200 trees
+          </h2>
+          <p class="font-body text-lg text-green-50/90 leading-relaxed">
+            5,000 native trees already stand on this 15-acre commons — planted through the founders'
+            own journey. The Founding Circle carries this forward: 100 members, each sustaining 200
+            more trees for 5 years, growing this land into a 25,000-tree regenerative canopy.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 md:gap-6 mb-10">
+          <div class="text-center p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+            <div class="font-heading text-3xl md:text-5xl font-bold text-gold mb-2">
+              {treesSustained.toLocaleString()}
+            </div>
+            <p class="font-body text-sm text-green-50">trees sustained</p>
+          </div>
+          <div class="text-center p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+            <div class="font-heading text-3xl md:text-5xl font-bold text-gold mb-2">{seatsJoined}</div>
+            <p class="font-body text-sm text-green-50">founding members joined</p>
+          </div>
+          <div class="text-center p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+            <div class="font-heading text-3xl md:text-5xl font-bold text-gold mb-2">{seatsRemaining}</div>
+            <p class="font-body text-sm text-green-50">seats remain</p>
+          </div>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+          <div class="flex justify-between text-xs font-body text-green-100 mb-2">
+            <span>Trees sustained</span>
+            <span>Waiting to grow</span>
+          </div>
+          <div class="w-full h-3 rounded-full bg-white/15 overflow-hidden">
+            <div
+              class="h-full bg-gradient-to-r from-gold to-lime"
+              style={`width: ${(treesSustained / 25000) * 100}%`}
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-padding bg-white">
+      <div class="container-narrow mx-auto">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="section-title mb-4">Plant your intention</h2>
+          <p class="font-body text-lg text-text-muted mb-8">
+            No payment now — just a signal that this land, this vision, resonates with something in you.
+          </p>
+          <a
+            href="mailto:mgehlot@gmail.com?subject=Asmakam%20Founding%20Circle%20%E2%80%94%20Count%20me%20in"
+            class="btn-primary text-lg"
+          >
+            I'm interested — count me in
+          </a>
+          <p class="font-body text-sm text-text-muted italic mt-6">
+            No payment required. Your story stays private — only Manish sees it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reach Manish -->
+    <section class="section-padding bg-sand">
+      <div class="container-narrow mx-auto">
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="font-heading italic text-lg text-text-muted mb-8">
+            The thread connecting you to land, season, body, and wisdom — it didn't snap. It just thinned.
+          </p>
+          <h2 class="section-title mb-10">Reach Manish</h2>
+
+          <div class="grid sm:grid-cols-3 gap-6 text-left sm:text-center mb-10">
+            <div>
+              <p class="font-body text-xs uppercase tracking-wide text-text-muted mb-1">US</p>
+              <a href="tel:+19199729329" class="font-heading text-lg text-forest hover:text-leaf">
+                +1 919 972 9329
+              </a>
+            </div>
+            <div>
+              <p class="font-body text-xs uppercase tracking-wide text-text-muted mb-1">
+                India &amp; WhatsApp
+              </p>
+              <a href="tel:+917693867294" class="font-heading text-lg text-forest hover:text-leaf">
+                +91 769 386 7294
+              </a>
+            </div>
+            <div>
+              <p class="font-body text-xs uppercase tracking-wide text-text-muted mb-1">Email</p>
+              <a
+                href="mailto:mgehlot@gmail.com"
+                class="font-heading text-lg text-forest hover:text-leaf break-all"
+              >
+                mgehlot@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <p class="font-body text-sm text-text-muted italic">
+            100 founding seats · when they fill, this closes
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
