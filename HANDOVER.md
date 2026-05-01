@@ -4,7 +4,7 @@
 
 ## Status: PRODUCTION-READY (Deployed)
 
-**Version:** 1.0.0 | **Commits:** 7 | **Last Updated:** February 6, 2026
+**Version:** 1.0.0 | **Commits:** 9 | **Last Updated:** May 1, 2026
 
 ## Tech Stack
 
@@ -80,7 +80,8 @@ npm run preview      # Preview built site
 ## Shadow Pages (Not in Navigation)
 
 - `/meeting-feb-2026` — Summary of the first founding team meeting (Feb 28, 2026). AI-transcribed from audio recording. Contains discussion points, takeaways, action items, quotes, and open questions. Accessible by direct URL only.
-- `/foundingcircle` — Founding Circle membership page adapted from Lovable prototype (asmakam-founding-circle.lovable.app). Hero, six-pillar grid, two-tier pricing ($5k / $10k+), progress toward 25,000-tree canopy, Manish contact CTAs. Assets under `public/images/founding-circle/`.
+- `/foundingcircle` — Founding Circle membership page. Rewritten 2026-05-01 in direct, second-person voice per founder feedback. Logo above the fold, bed-nights headlined on each tier, photo-only "decade in pictures" gallery, seats-filled progress bar. Trees framing demoted to footnote. 3 tagline options live as code comments at the top of the file — swap the `tagline` const to try alternates.
+- `/foundingcircle-old` — Original Lovable-adapted version preserved for side-by-side comparison.
 
 ## Known Gaps
 
@@ -89,6 +90,17 @@ npm run preview      # Preview built site
 - No testing framework
 
 ## Session Log
+
+### 2026-05-01
+- Rewrote `/foundingcircle` in direct, second-person voice per founder feedback
+- Original preserved at `/foundingcircle-old`
+- Hero gained logo above the fold + new tagline (3 alternates left as code comments)
+- Bed-nights now the headline on each tier; soft benefits demoted under "Plus" subhead
+- Acres/trees stat block removed from The Space; trees → footnote under tiers
+- "So Far and Years Ahead" → 6-photo gallery using existing community/campus assets
+- Captions written from filename inference (Sunday circles, summer camps, etc.) — founder to verify they match actual photo content
+- Soft tier benefits ("a say in what we build", "Founding Wall", "closer seat") are placeholders — founder said specifics not known yet
+- Deployed to Vercel production (asmakam.org/foundingcircle)
 
 ### 2026-04-12
 - Added shadow page `/foundingcircle` — adapted from Lovable prototype, same design tokens as site
@@ -103,4 +115,4 @@ npm run preview      # Preview built site
 - Deployed to Vercel production
 
 ---
-*Last reviewed: 2026-04-12*
+*Last reviewed: 2026-05-01*
