@@ -17,3 +17,25 @@ features:
   - "Camping site"
   - "Food forest with diverse species"
 buildingTechnique: "Ancient natural architectural technique of lime and stone with natural materials"
+masterplanCaption: >
+  The campus master plan — a permaculture design organised into interlocking zones, from the
+  food forest and orchards to the water-harvesting pond, silvopasture and living quarters.
+zonesIntro: >
+  The land is designed as one working ecosystem. Each zone has a job — growing food, holding
+  water, sheltering animals, or housing the people who tend it. This is what is taking shape
+  across the 15 acres.
+zones:
+  - name: "Permaculture Food Forest"
+    detail: "Multi-layered syntropic planting — canopy, fruit trees, shrubs and ground cover growing together the way a forest does, producing food while building soil year on year."
+  - name: "Syntropic Agriculture"
+    detail: "Dense, successional beds where crops and support species are planted together, mimicking natural regeneration so the system feeds itself instead of depending on external inputs."
+  - name: "Rotational Silvopasture"
+    detail: "Sheep and goats grazed in rotation between windbreak tree lines — animals, trees and pasture managed as one, keeping the land fertile and the herd healthy."
+  - name: "Water-Harvesting Pond & Swales"
+    detail: "A contoured pond and bio-filtration swales slow, spread and sink monsoon rain across the land, recharging groundwater and carrying water to every zone by gravity."
+  - name: "Multi-Use Farm Hub & Living Quarters"
+    detail: "The existing farm hub and residential rooms — built with lime, stone and natural materials — anchor the campus for students, mentors and the community who live and learn here."
+  - name: "Orchards & Moringa"
+    detail: "Established mango groves and moringa stands give shade, nutrition and a standing harvest while the younger food forest matures around them."
+  - name: "Regenerative Systems"
+    detail: "Composting station, chicken tractors, beehives, a greywater-irrigated banana circle and rainwater collection tanks close the loops, turning farm waste into fertility and captured rain into a year-round water supply."

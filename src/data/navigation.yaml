@@ -3,6 +3,8 @@ links:
     href: "/"
   - label: "About"
     href: "/about"
+  - label: "Campus"
+    href: "/campus"
   - label: "Programs"
     href: "/programs"
   - label: "Contact"

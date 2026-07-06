@@ -4,7 +4,7 @@
 
 ## Status: PRODUCTION-READY (Deployed)
 
-**Version:** 1.0.0 | **Commits:** 9 | **Last Updated:** May 1, 2026
+**Version:** 1.0.0 | **Commits:** 9 | **Last Updated:** July 6, 2026
 
 ## Tech Stack
 
@@ -91,6 +91,16 @@ npm run preview      # Preview built site
 
 ## Session Log
 
+### 2026-07-06
+- Added a new **Campus** page (`/campus`) and nav link (Home · About · Campus · Programs · Contact)
+- Generated an illustrated permaculture **master-plan image** with nano banana (Gemini 3 Pro Image, `gemini-3-pro-image-preview`), redrawing the founder-supplied `layout2.jpeg` into a clean brand-palette site map → `public/images/campus-masterplan.png`. Source refs kept at `public/images/layout1.jpeg` (drone photo) and `layout2.jpeg` (original plan)
+- Homepage "Our Home" (`Campus.astro`): kept the food-forest photo + copy, added the master-plan image as a wide block below with an "Explore the campus →" link to `/campus`
+- `/campus` page sections: hero, intro, large master plan (with coordinates caption), zone legend (7 zone cards), lime-&-stone materials block, contact CTA
+- `campus.yaml` extended with `masterplanCaption`, `zonesIntro`, and a `zones` list (new copy)
+- Design doc committed-ready at `docs/superpowers/specs/2026-07-06-campus-page-design.md`
+- Build verified clean (11 pages incl. `/campus`); visually QA'd both surfaces via headless screenshots
+- NOT yet committed or deployed — awaiting founder review
+
 ### 2026-05-01
 - Rewrote `/foundingcircle` in direct, second-person voice per founder feedback
 - Original preserved at `/foundingcircle-old`
@@ -115,4 +125,4 @@ npm run preview      # Preview built site
 - Deployed to Vercel production
 
 ---
-*Last reviewed: 2026-05-01*
+*Last reviewed: 2026-07-06*

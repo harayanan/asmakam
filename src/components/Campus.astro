@@ -49,5 +49,29 @@ const campusData = yaml.load(readFileSync('src/data/campus.yaml', 'utf8')) as Re
         <div class="absolute -bottom-3 left-8 w-4 h-4 bg-gold rounded-full animate-float-delayed shadow-lg hidden md:block"></div>
       </div>
     </div>
+
+    <!-- Master plan -->
+    <div class="mt-16 lg:mt-20 animate-fade-in-up">
+      <div class="rounded-3xl overflow-hidden shadow-xl border border-sand bg-white">
+        <img
+          src="/images/campus-masterplan.png"
+          alt="Illustrated master plan of the Asmakam permaculture food forest campus, showing the food forest, silvopasture, water-harvesting pond, farm hub and living quarters"
+          class="w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <p class="font-body text-text-muted leading-relaxed max-w-2xl">
+          {campusData.masterplanCaption}
+        </p>
+        <a
+          href="/campus"
+          class="inline-flex items-center gap-2 shrink-0 font-body text-sm font-semibold text-forest hover:text-leaf transition-colors group"
+        >
+          Explore the campus
+          <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>

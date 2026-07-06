@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import yaml from 'js-yaml';
+import { readFileSync } from 'fs';
+
+const campusData = yaml.load(readFileSync('src/data/campus.yaml', 'utf8')) as Record<string, any>;
+---
+
+<BaseLayout
+  title="Campus | Asmakam Life University"
+  description="Our 15-acre permaculture food forest campus in Indore — a living, working ecosystem designed as one, from food forest and silvopasture to the water-harvesting pond and living quarters."
+  image="/images/campus-masterplan.png"
+>
+  <Header />
+  <main>
+    <!-- Page Hero -->
+    <section class="relative py-24 md:py-28 overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="/images/campus-overview.png" alt="" class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-br from-forest/85 via-forest/70 to-leaf/60"></div>
+      </div>
+      <div class="container-wide mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <p class="font-body text-sm tracking-[0.2em] uppercase text-green-100 mb-3 animate-fade-in-up">Our Campus</p>
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 animate-fade-in-up drop-shadow-lg">
+          {campusData.headline}
+        </h1>
+        <p class="font-body text-lg text-green-100 max-w-2xl mx-auto animate-fade-in-up delay-200">
+          {campusData.location} — {campusData.locationHighlight}
+        </p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section-padding bg-cream">
+      <div class="container-narrow mx-auto">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="section-title mb-6">{campusData.title}</h2>
+          <p class="font-body text-lg text-text-muted leading-relaxed mb-6">
+            {campusData.description}
+          </p>
+          <p class="font-body text-text-muted leading-relaxed">
+            {campusData.infrastructure}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master plan -->
+    <section class="section-padding bg-white">
+      <div class="container-wide mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <p class="font-body text-sm tracking-[0.2em] uppercase text-leaf mb-3">The Master Plan</p>
+          <h2 class="section-title mb-4">15 acres, designed as one ecosystem</h2>
+          <p class="font-body text-lg text-text-muted leading-relaxed">{campusData.masterplanCaption}</p>
+        </div>
+        <div class="rounded-3xl overflow-hidden shadow-xl border border-sand bg-white">
+          <img
+            src="/images/campus-masterplan.png"
+            alt="Illustrated master plan of the Asmakam permaculture food forest campus, showing the food forest, syntropic agriculture, rotational silvopasture, water-harvesting pond, multi-use farm hub, living quarters, orchards and regenerative systems"
+            class="w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <p class="mt-4 text-center font-body text-sm text-text-muted/80">
+          Indore, Central India &nbsp;·&nbsp; 22°41′01.5″N 75°41′06.8″E
+        </p>
+      </div>
+    </section>
+
+    <!-- Zone legend -->
+    <section class="section-padding bg-sand">
+      <div class="container-wide mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="section-title mb-4">A place for everything</h2>
+          <p class="font-body text-lg text-text-muted leading-relaxed">{campusData.zonesIntro}</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {campusData.zones.map((zone: any) => (
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-sand/60 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+              <div class="w-11 h-11 mb-4 rounded-full bg-forest/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21c-4.97-2.5-8-6.5-8-11a8 8 0 0116 0c0 4.5-3.03 8.5-8 11z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v18M8 8c1.5 0 3 .8 4 2M16 8c-1.5 0-3 .8-4 2"/>
+                </svg>
+              </div>
+              <h3 class="font-heading text-lg font-semibold text-forest mb-2">{zone.name}</h3>
+              <p class="font-body text-sm text-text-muted leading-relaxed">{zone.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Building technique + features -->
+    <section class="section-padding bg-cream">
+      <div class="container-wide mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/food-forest-harvest.png"
+              alt="Harvest from the Asmakam food forest"
+              class="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <p class="font-body text-sm tracking-[0.2em] uppercase text-leaf mb-3">Built by Hand, from the Land</p>
+            <h2 class="section-title mb-6">Lime, stone and natural materials</h2>
+            <p class="font-body text-lg text-text-muted leading-relaxed mb-8">
+              {campusData.buildingTechnique}. {campusData.infrastructure}
+            </p>
+            <div class="flex flex-wrap gap-3">
+              {campusData.features.map((feature: string) => (
+                <span class="font-body text-sm bg-forest/10 text-forest px-4 py-2 rounded-full border border-forest/10 hover:bg-forest hover:text-white transition-colors duration-300 cursor-default">
+                  {feature}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-padding bg-forest">
+      <div class="container-narrow mx-auto text-center">
+        <h2 class="font-heading text-3xl md:text-4xl text-white font-bold mb-4">Come see it for yourself</h2>
+        <p class="font-body text-lg text-green-100 max-w-2xl mx-auto mb-8">
+          The campus is taking shape in {campusData.location}. Reach out to visit, volunteer, or join us
+          as the food forest grows.
+        </p>
+        <a href="/contact" class="inline-block bg-white text-forest font-body font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:bg-cream hover:shadow-lg hover:-translate-y-0.5">
+          Get in touch
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
